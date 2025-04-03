@@ -1,4 +1,5 @@
-:root {
+ /* Variáveis de raiz - Define o esquema de cores e tokens de design */
+ :root {
   --primary-color: #004080;
   --primary-dark: #003366;
   --primary-light: #0066cc;
@@ -23,12 +24,37 @@
   --transition: all 0.3s ease;
 }
 
+/* Estilo do botão "Voltar ao topo" */
+#meuBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Efeito hover para o botão "Voltar ao topo" */
+#meuBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Reset dos estilos padrão do navegador */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo base para o corpo da página */
 body {
   color: var(--text-color);
   background: var(--background-color);
@@ -40,17 +66,19 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Estilo dos links */
 a {
   text-decoration: none;
   color: var(--primary-light);
   transition: var(--transition);
 }
 
+/* Efeito hover para links */
 a:hover {
   color: var(--accent-color);
 }
 
-/* Header */
+/* Cabeçalho */
 .header {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   position: fixed;
@@ -64,29 +92,40 @@ a:hover {
   align-items: center;
 }
 
+/* Conteúdo do cabeçalho */
 .header-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
+/* Estilo do logo */
 .logo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  text-align: center
 }
 
+/* Imagem do logo */
 .logo img {
   height: 50px;
   max-width: 100%;
   display: block;
+  text-align: center
 }
 
+/* Subtítulo do cabeçalho */
 .subtitle {
   font-size: 1rem;
   font-weight: 400;
-  margin: 0.5rem 0 0;
+  margin: 0.5rem 0 10;
   opacity: 0.9;
+  text-align: center;
+  
 }
 
+/* Botão de menu mobile */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -94,23 +133,24 @@ a:hover {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.5rem;
 }
 
-/* Main container */
+/* Container principal */
 .container {
   display: flex;
   flex: 1;
-  margin-top: 100px; /* Add space for fixed header */
+  margin-top: 127px; /* Adiciona espaço para o cabeçalho fixo */
 }
 
-/* Sidebar */
+/* Barra lateral */
 .sidebar {
   width: 300px;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--border-color);
   height: calc(100vh - 100px);
   position: sticky;
-  top: 100px; /* Adjust for fixed header */
+  top: 100px; /* Ajuste para o cabeçalho fixo */
   overflow-y: auto;
   padding: 1.5rem 0;
   transition: var(--transition);
@@ -118,23 +158,28 @@ a:hover {
   scrollbar-color: var(--primary-light) var(--sidebar-bg);
 }
 
+/* Estilo da barra de rolagem para webkit */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
 
+/* Estilo da trilha da barra de rolagem para webkit */
 .sidebar::-webkit-scrollbar-track {
   background: var(--sidebar-bg);
 }
 
+/* Estilo do polegar da barra de rolagem para webkit */
 .sidebar::-webkit-scrollbar-thumb {
   background-color: var(--primary-light);
   border-radius: 20px;
 }
 
+/* Seção de navegação */
 .nav-section {
   padding: 0.5rem 1.5rem;
 }
 
+/* Título da navegação */
 .nav-title {
   font-size: 0.875rem;
   font-weight: 600;
@@ -146,15 +191,18 @@ a:hover {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Lista de navegação */
 .nav-list {
   list-style: none;
   margin-bottom: 1.5rem;
 }
 
+/* Item da navegação */
 .nav-item {
   margin-bottom: 0.25rem;
 }
 
+/* Link da navegação */
 .nav-link {
   display: block;
   padding: 0.625rem 0.75rem;
@@ -165,22 +213,26 @@ a:hover {
   transition: var(--transition);
 }
 
+/* Efeito hover e ativo para links de navegação */
 .nav-link:hover, .nav-link.active {
   background-color: rgba(0, 102, 204, 0.08);
   color: var(--primary-color);
   text-decoration: none;
 }
 
+/* Lista de subnavegação */
 .subnav-list {
   list-style: none;
   padding-left: 1.5rem;
   margin: 0.25rem 0 0.5rem;
 }
 
+/* Item da lista de subnavegação */
 .subnav-list li {
   margin-bottom: 0.25rem;
 }
 
+/* Link da subnavegação */
 .subnav-list a {
   display: block;
   padding: 0.5rem 0.75rem;
@@ -190,13 +242,14 @@ a:hover {
   transition: var(--transition);
 }
 
+/* Efeito hover para links de subnavegação */
 .subnav-list a:hover {
   background-color: rgba(0, 102, 204, 0.05);
   color: var(--primary-color);
   text-decoration: none;
 }
 
-/* Content */
+/* Conteúdo principal */
 .content {
   flex: 1;
   padding: 2.5rem;
@@ -205,11 +258,13 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Seção de conteúdo */
 .section {
   margin-bottom: 4rem;
   max-width: 900px;
 }
 
+/* Título da seção */
 .section-title {
   font-size: 2rem;
   font-weight: 700;
@@ -219,17 +274,20 @@ a:hover {
   color: var(--primary-dark);
 }
 
+/* Subseção */
 .subsection {
   margin: 2.5rem 0;
 }
 
+/* Título da subseção */
 .subsection-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.2rem;
   color: var(--primary-dark);
 }
 
+/* Bloco de texto */
 .text {
   font-size: 1rem;
   line-height: 1.7;
@@ -237,25 +295,28 @@ a:hover {
   color: var(--text-color);
 }
 
+/* Parágrafos dentro de blocos de texto */
 .text p {
   margin-bottom: 1.25rem;
 }
 
+/* Texto em negrito */
 .text strong {
   font-weight: 600;
   color: var(--primary-dark);
 }
 
-/* Lists */
+/* Listas */
 ul, ol {
   margin: 0 0 1.5rem 1.5rem;
 }
 
+/* Itens de lista */
 li {
   margin-bottom: 0.75rem;
 }
 
-/* Images */
+/* Contêiner de imagens */
 .image-container {
   margin: 2rem 0;
   text-align: center;
@@ -265,6 +326,7 @@ li {
   background-color: #f5f5f5;
 }
 
+/* Imagens */
 img {
   max-width: 100%;
   height: auto;
@@ -272,6 +334,7 @@ img {
   margin: 0 auto;
 }
 
+/* Legenda da imagem */
 .image-caption {
   font-size: 0.875rem;
   color: var(--text-light);
@@ -283,7 +346,7 @@ img {
   border-bottom-right-radius: var(--radius-md);
 }
 
-/* Notes */
+/* Notas */
 .note {
   background-color: var(--note-bg);
   border-left: 4px solid var(--note-border);
@@ -292,6 +355,7 @@ img {
   border-radius: var(--radius-sm);
 }
 
+/* Avisos */
 .warning {
   background-color: var(--warning-bg);
   border-left: 4px solid var(--warning-border);
@@ -300,6 +364,7 @@ img {
   border-radius: var(--radius-sm);
 }
 
+/* Mensagens de sucesso */
 .success {
   background-color: var(--success-bg);
   border-left: 4px solid var(--success-border);
@@ -308,7 +373,7 @@ img {
   border-radius: var(--radius-sm);
 }
 
-/* Footer */
+/* Rodapé */
 .footer {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
   color: white;
@@ -317,11 +382,13 @@ img {
   font-size: 0.875rem;
 }
 
+/* Parágrafos no rodapé */
 .footer p {
   margin-bottom: 0.5rem;
   opacity: 0.9;
 }
 
+/* Links no rodapé */
 .footer-links {
   display: flex;
   justify-content: center;
@@ -329,28 +396,32 @@ img {
   margin: 1rem 0;
 }
 
+/* Estilo dos links no rodapé */
 .footer-links a {
   color: white;
   opacity: 0.8;
   transition: var(--transition);
 }
 
+/* Efeito hover para links no rodapé */
 .footer-links a:hover {
   opacity: 1;
   text-decoration: underline;
 }
 
+/* Copyright no rodapé */
 .copyright {
   margin-top: 1rem;
   font-size: 0.75rem;
   opacity: 0.7;
 }
 
-/* Accordion styling */
+/* Estilo do acordeão */
 details {
   margin-bottom: 0.25rem;
 }
 
+/* Sumário do acordeão */
 details > summary {
   list-style: none;
   cursor: pointer;
@@ -358,10 +429,12 @@ details > summary {
   padding-right: 1.5rem;
 }
 
+/* Remove marcador padrão do sumário */
 details > summary::-webkit-details-marker {
   display: none;
 }
 
+/* Adiciona ícone de expansão ao sumário */
 details > summary::after {
   content: '+';
   position: absolute;
@@ -373,16 +446,18 @@ details > summary::after {
   transition: var(--transition);
 }
 
+/* Altera ícone quando o acordeão está aberto */
 details[open] > summary::after {
   content: '−';
 }
 
+/* Estilo do sumário quando o acordeão está aberto */
 details[open] > summary {
   font-weight: 600;
   color: var(--primary-color);
 }
 
-/* Print styles */
+/* Estilos para impressão */
 @media print {
   .header, .sidebar, .footer {
     display: none;
@@ -402,13 +477,18 @@ details[open] > summary {
   }
 }
 
-/* Responsive */
+/* Responsividade - Telas grandes */
 @media (max-width: 1024px) {
   .content {
     padding: 2rem;
   }
+  
+  .section {
+    max-width: 100%;
+  }
 }
 
+/* Responsividade - Tablets */
 @media (max-width: 768px) {
   .header {
     padding: 1rem;
@@ -416,6 +496,24 @@ details[open] > summary {
   
   .mobile-menu-toggle {
     display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    z-index: 1001;
+  }
+  
+  .header-content {
+    padding-right: 2.5rem;
+  }
+  
+  .logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-bottom: 0.5rem;
   }
   
   .container {
@@ -431,11 +529,13 @@ details[open] > summary {
     padding: 0;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
+    transition: max-height 0.3s ease;
   }
   
   .sidebar.active {
     max-height: 80vh;
     padding: 1rem 0;
+    overflow-y: auto;
   }
   
   .content {
@@ -449,15 +549,20 @@ details[open] > summary {
   .subsection-title {
     font-size: 1.25rem;
   }
+  
+  .image-container {
+    margin: 1.5rem 0;
+  }
 }
 
+/* Responsividade - Dispositivos móveis */
 @media (max-width: 480px) {
   .header {
     padding: 0.75rem;
   }
   
   .logo img {
-    height: 40px;
+    height: 35px;
   }
   
   .subtitle {
@@ -475,15 +580,27 @@ details[open] > summary {
   .subsection-title {
     font-size: 1.125rem;
   }
+  
+  .text {
+    font-size: 0.95rem;
+  }
+  
+  ul, ol {
+    margin-left: 1rem;
+  }
+  
+  .image-caption {
+    font-size: 0.8rem;
+  }
 }
 
-/* Accessibility focus styles */
+/* Estilos de foco para acessibilidade */
 a:focus, button:focus, summary:focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
-/* Dark mode support */
+/* Suporte ao modo escuro */
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #e0e0e0;
@@ -505,7 +622,7 @@ a:focus, button:focus, summary:focus {
   }
 }
 
-/* Skip to content link for accessibility */
+/* Link para pular para o conteúdo (acessibilidade) */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -517,11 +634,12 @@ a:focus, button:focus, summary:focus {
   transition: top 0.3s;
 }
 
+/* Exibe o link de pular para o conteúdo quando em foco */
 .skip-link:focus {
   top: 0;
 }
 
-/* Back to top button */
+/* Botão voltar ao topo */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -541,10 +659,12 @@ a:focus, button:focus, summary:focus {
   z-index: 99;
 }
 
+/* Torna o botão voltar ao topo visível */
 .back-to-top.visible {
   opacity: 0.8;
 }
 
+/* Efeito hover para o botão voltar ao topo */
 .back-to-top:hover {
   opacity: 1;
   color: white;
